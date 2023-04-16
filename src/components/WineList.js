@@ -34,9 +34,21 @@ function WineList() {
       <div className="row">
         <div className="container">
           <div className="row justify-content-center wines-value">
-            {IsLoading? <Orbit size={35} color="#231F20" /> : wines.map( (wine) => (
+            {wines.map( (wine) => (
                 <div className="col col-sm-4 wines-style">
-                  <Wine name={wine.Name} winery={wine.Winery} description={wine.Description} year={wine.Year} variety={wine.Variety} totalratings={wine.Totalqualifications} avgratings={wine.Avgqualifications} region={wine.Region} imgpath={wine.Image} totalscore={wine.Score} identifier={wine._id}/>
+                  <Wine 
+                    name={wine.Name} 
+                    winery={wine.Winery} 
+                    description={wine.Description} 
+                    year={wine.Year} 
+                    variety={wine.Variety} 
+                    totalratings={wine.Totalqualifications} 
+                    avgratings={wine.Avgqualifications} 
+                    region={wine.Region} 
+                    imgpath={wine.Image} 
+                    totalscore={wine.Score} 
+                    identifier={wine._id}
+                  />
                 </div>
               ))}
           </div>
