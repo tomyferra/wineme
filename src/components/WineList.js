@@ -2,7 +2,7 @@ import Wine from './Wine';
 import '../stylesheets/Wines.css';
 import WineDataService from '../services/wine-services';
 import { useEffect, useState } from 'react';
-
+import { TailSpin } from  'react-loader-spinner'
 function WineList() {
 
   const [wines,setWines] = useState([]);
@@ -10,11 +10,13 @@ function WineList() {
   useEffect(() => {
     async function loadWines(){
       console.log("Is Loading: ",IsLoading);
+      setIsLoading(true);
       console.log("getting wine list")
       WineDataService.getAll()
         .then(response => {
           console.log("Info from db: ",response.data)
           setWines(response.data);
+          setIsLoading(false);
         })
         .catch(error => {
           console.log(error);
@@ -34,7 +36,21 @@ function WineList() {
       <div className="row">
         <div className="container">
           <div className="row justify-content-center wines-value">
-            {wines.map( (wine) => (
+            {IsLoading? 
+              <div className="spinner">
+                <TailSpin
+                  className='spinner'
+                  height="80"
+                  width="80"
+                  color="#4fa94d"
+                  ariaLabel="tail-spin-loading"
+                  radius="1"
+                  wrapperStyle={{}}
+                  wrapperClass=""
+                  visible={true}
+                />
+              </div> : 
+              wines.map( (wine) => (
                 <div className="col col-sm-4 wines-style">
                   <Wine 
                     name={wine.Name} 
