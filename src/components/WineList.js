@@ -2,7 +2,6 @@ import Wine from './Wine';
 import '../stylesheets/Wines.css';
 import WineDataService from '../services/wine-services';
 import { useEffect, useState } from 'react';
-import { Orbit } from '@uiball/loaders'
 
 function WineList() {
 
@@ -14,6 +13,7 @@ function WineList() {
       console.log("getting wine list")
       WineDataService.getAll()
         .then(response => {
+          console.log("Info from db: ",response.data)
           setWines(response.data);
         })
         .catch(error => {
