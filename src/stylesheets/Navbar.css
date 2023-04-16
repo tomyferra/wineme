@@ -1,0 +1,67 @@
+
+.navbar{
+  background-color: #776343 !important;
+  color: white !important;
+}
+.navbar-brand{
+  color: white !important;
+}
+.Logo{
+  height: 34px;
+}
+.navbar-item{
+  color: white !important;
+}
+
+.navbar-collapse{
+  align-items: center;
+  justify-content: space-between;
+  color: white !important;
+}
+.navbar-brand{
+  max-height: 5vh;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-brand {
+    display: none;
+  }
+
+}
+.navbar-toggler{
+  color: white !important; 
+}
+
+.nav-link{
+  
+}
+
+.custom-toggler.navbar-toggler{
+  border-color: white;
+}
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+
+.nav-link{
+  color: white !important;
+  display: inline-block;
+  position: relative;
+}
+.nav-link:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

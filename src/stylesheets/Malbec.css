@@ -1,0 +1,10 @@
+.malbec{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.malbecImg{
+  padding: 5%;
+  width: 80%;
+}

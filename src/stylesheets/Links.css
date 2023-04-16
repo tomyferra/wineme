@@ -1,0 +1,25 @@
+.links-container{
+  padding: 10px;
+}
+
+.social-media{
+  border: 2px solid #a88f69;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.social-media-links{
+  text-decoration: none;
+  color: #a88f69;
+  font-weight: bold;
+  
+}
+
+.social-media-links:hover{
+text-decoration: underline;
+}
+.link{
+  margin: 10px 0 10px 0;
+}
+
