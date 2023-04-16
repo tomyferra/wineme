@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "http://wineme-api.onrender.com/api/wines",
+  baseURL: "https://wineme-api.onrender.com",
   headers: {
     "Content-type": "application/json"
   }
