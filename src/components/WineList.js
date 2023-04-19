@@ -3,19 +3,21 @@ import '../stylesheets/Wines.css';
 import WineDataService from '../services/wine-services';
 import { useEffect, useState } from 'react';
 import { TailSpin } from  'react-loader-spinner'
+
 function WineList() {
 
   const [wines,setWines] = useState([]);
+  const [allwines,setallWines] = useState([]);
   const [IsLoading,setIsLoading] = useState(true);
+
   useEffect(() => {
     async function loadWines(){
-      console.log("Is Loading: ",IsLoading);
       setIsLoading(true);
-      console.log("getting wine list")
       WineDataService.getAll()
         .then(response => {
-          console.log("Info from db: ",response.data)
           setWines(response.data);
+          setallWines(response.data);
+          
           setIsLoading(false);
         })
         .catch(error => {
@@ -23,18 +25,27 @@ function WineList() {
           alert(error);
         });
     }
-    console.log("Wine List is ready");
     setIsLoading(false);
     loadWines();
   }, []);
 
 
-
+  const handleChange = (e) =>{
+    const results = allwines.filter(wine => {
+      if (e.target.value === "") {return wines}
+      return wine.Name.toLowerCase().includes(e.target.value.toLowerCase());
+    })
+    setWines(results)
+  }
 
   return (
     <div id="wineList" className="winelist container-fluid">
       <div className="row">
         <div className="container">
+          <form class="search-form">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={handleChange}/>
+            <button class="btn-primary btn my-sm-0" type="submit">Search</button>
+          </form>
           <div className="row justify-content-center wines-value">
             {IsLoading? 
               <div className="spinner">
