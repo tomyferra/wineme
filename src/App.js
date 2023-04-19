@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <Hero />
       <WineList />
-      <Varietals />
+      {/* <Varietals /> */}
       <Links />
     </div>
   );

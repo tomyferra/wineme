@@ -30,9 +30,9 @@ function NavigationBar () {
             <li className="nav-item">
               <a className="nav-link " aria-current="page" href='#wineList'>Wines</a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link " aria-current="page" href='#Varietals'>Varietals</a>
-            </li>
+            </li> */}
             <li className="nav-item">
               <a className="nav-link " aria-current="page" href='#SocialMedia'>Social Media</a>
             </li>

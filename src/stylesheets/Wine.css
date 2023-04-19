@@ -24,6 +24,10 @@
   justify-content: space-around;
 }
 
+.modal-container{
+  justify-content: center;
+}
+
 @media screen and (max-width: 767px) {
   .card-img-start{
     max-width: 50%;
