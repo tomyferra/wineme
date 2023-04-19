@@ -32,7 +32,7 @@ function WineList() {
 
   const handleChange = (e) =>{
     const results = allwines.filter(wine => {
-      if (e.target.value === "") {return wines}
+      if (e.target.value === "" || e.target.value.length<3) {return wines}
       return wine.Name.toLowerCase().includes(e.target.value.toLowerCase());
     })
     setWines(results)
