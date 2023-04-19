@@ -16,7 +16,7 @@ function Wine ({ name, winery, description, year, variety, totalratings, totalsc
     <div className="container my-5">
       <div className="card row flex-row">
           <div className="imagen">
-            <img className=" col-lg-4 card-img-start img-fluid p-0" src={imgpath} alt={imgpath} />  
+            <img className=" col-lg-4 card-img-start img-fluid p-0" src={window.location.origin + imgpath} alt={imgpath} />  
           </div>
           
           <div className="col-lg-8 card-body text-center">
