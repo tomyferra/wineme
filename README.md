@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# WineMe
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a web application that enables users to rate a list of wines from Argentina based on their preferences. The wine list is retrieved from a MongoDB database that contains various types of wines from Argentina. The database is constantly updated with new wines, and the app provides a simple and easy-to-use interface to access the wine list.
 
-## Available Scripts
+Users can rate wines based on their personal preferences, such as the type of wine, the region it was produced in, and its flavor profile. When a user rates a wine, the app updates the rating in the database accordingly. This ensures that the wine list is always up-to-date and accurate, allowing users to make informed decisions about the wines they want to try.
 
-In the project directory, you can run:
+In addition, the app provides detailed information about each wine, such as its origin, grape variety, and tasting notes, wineyard and year. Users can view this information by clicking on a wine in the list, which takes them to a page with more detailed information about the wine.
 
-### `npm start`
+Overall, this app is a useful tool for anyone interested in exploring the world of Argentine wines. It provides a comprehensive and up-to-date list of wines, along with a simple and intuitive interface for rating and exploring them.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#
+## Features
+* View a list of wines
+* Rate wines based on personal preferences
+* Update wine ratings
+* View updated wine ratings
+## Technologies Used
+* Node.js
+* Express.js
+* MongoDB
+* React
+## Usage
+On the home page, you will see a list of wines retrieved from the MongoDB database.
+Click on a wine to view more details about it, including its current rating.
+Use the rating stars to rate the wine based on your personal preferences.
+Click the "Save" button to submit your rating and update the database.
+The wine rating will be updated on the page and in the database.
+## Contributing
+If you would like to contribute to this project, feel free to fork the repository and submit a pull request. You can also report any bugs or issues in my personal email: ferra.tomy@gmail.com
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+If you want to add new wines into the page, feel free to drop me an email and i'll add them. This funcionality is planned for the future. 
+# 
+## Contact details
+* Mail: ferra.tomy@gmail.com
+* Phone: +54 9 (11) 69002457
+* Portfolio: https://tomyferra.github.io/Portfolio/
+* Github: https://github.com/tomyferra
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
