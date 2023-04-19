@@ -7,6 +7,14 @@ Users can rate wines based on their personal preferences, such as the type of wi
 In addition, the app provides detailed information about each wine, such as its origin, grape variety, and tasting notes, wineyard and year. Users can view this information by clicking on a wine in the list, which takes them to a page with more detailed information about the wine.
 
 Overall, this app is a useful tool for anyone interested in exploring the world of Argentine wines. It provides a comprehensive and up-to-date list of wines, along with a simple and intuitive interface for rating and exploring them.
+#
+
+## Backend
+The backend is done with MongoDB.
+
+Backend API located in: https://wineme-api.onrender.com/
+
+Github backend Repository: https://github.com/tomyferra/wineme-api
 
 #
 ## Features
