@@ -1,5 +1,6 @@
 # WineMe
-
+https://wineme.onrender.com/
+#
 This is a web application that enables users to rate a list of wines from Argentina based on their preferences. The wine list is retrieved from a MongoDB database that contains various types of wines from Argentina. The database is constantly updated with new wines, and the app provides a simple and easy-to-use interface to access the wine list.
 
 Users can rate wines based on their personal preferences, such as the type of wine, the region it was produced in, and its flavor profile. When a user rates a wine, the app updates the rating in the database accordingly. This ensures that the wine list is always up-to-date and accurate, allowing users to make informed decisions about the wines they want to try.
@@ -9,10 +10,13 @@ In addition, the app provides detailed information about each wine, such as its 
 Overall, this app is a useful tool for anyone interested in exploring the world of Argentine wines. It provides a comprehensive and up-to-date list of wines, along with a simple and intuitive interface for rating and exploring them.
 #
 
-## Backend
-The backend is done with MongoDB.
+## Links
+
+Frontend located in: https://wineme.onrender.com/
 
 Backend API located in: https://wineme-api.onrender.com/
+
+Github frontend Repository: https://github.com/tomyferra/wineme
 
 Github backend Repository: https://github.com/tomyferra/wineme-api
 
@@ -23,10 +27,11 @@ Github backend Repository: https://github.com/tomyferra/wineme-api
 * Update wine ratings
 * View updated wine ratings
 ## Technologies Used
-* Node.js
-* Express.js
 * MongoDB
+* Express.js
 * React
+* Node.js
+
 ## Usage
 On the home page, you will see a list of wines retrieved from the MongoDB database.
 Click on a wine to view more details about it, including its current rating.
