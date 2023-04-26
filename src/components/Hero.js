@@ -10,12 +10,13 @@ function Hero () {
   const [wines,setWines] = useState(0);
   const [totalQualifications,settotalQualifications] = useState(0);
   let qualifications = 0;
-
   useEffect(() => {
     async function countWines(){
       WineDataService.getAll()
         .then(response => {
           setWines(response.data.length)
+          console.log("renderd");
+          qualifications=0;
           for (var i = 0; i < response.data.length; i++) {
             qualifications = response.data[i].Totalqualifications + qualifications;
           }
@@ -26,18 +27,18 @@ function Hero () {
         });
     }
     countWines()
-  });
+  },[]);
 
   return(
     <div className="hero-container container-fluid">
       <img src={WineMeLogo} alt="Wine Me Logo" className="WineMeLogo"/>
       <h3>Drink Wine, Learn Wine</h3>
       <div className="container row countUp-container">
-        <div className="col col-sm-5 countUp-item">
+        <div className="col col-sm-4 countUp-item">
           <i className="d-flex align-items-center fa-solid fa-wine-glass fa-2xl"></i>
           <div className="px-3 ">
             <CountUp 
-              className="counter d-flex align-items-center"
+              className="counter d-flex align-items-center justify-content-center"
               end={wines}
               delay={2}
               duration={2}
@@ -45,11 +46,11 @@ function Hero () {
             <p className="d-flex align-items-center">Wines</p>
           </div>
         </div>
-        <div className="col col-sm-5 countUp-item">
+        <div className="col col-sm-4 countUp-item">
           <i className="d-flex align-items-center fa-solid fa-star-half-stroke fa-2xl"></i>
           <div className="px-3 ">
             <CountUp 
-              className="counter d-flex align-items-center"
+              className="counter d-flex align-items-center justify-content-center"
               end={totalQualifications}
               delay={2}
               duration={2}
