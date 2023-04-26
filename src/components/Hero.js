@@ -40,7 +40,7 @@ function Hero () {
             <CountUp 
               className="counter d-flex align-items-center justify-content-center"
               end={wines}
-              delay={2}
+              delay={1}
               duration={2}
             />
             <p className="d-flex align-items-center">Wines</p>
@@ -52,7 +52,7 @@ function Hero () {
             <CountUp 
               className="counter d-flex align-items-center justify-content-center"
               end={totalQualifications}
-              delay={2}
+              delay={1}
               duration={2}
             />
             <p className="d-flex align-items-center">Ratings</p>
