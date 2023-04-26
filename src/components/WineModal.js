@@ -39,17 +39,20 @@ function WineModal ({ setIsOpen, name, winery, description, year, variety, total
 
   return(
     <div className="container modal-container">
-      <div className="card row flex-row align-items-center modal-container">
+        <div className="card row flex-row align-items-center modal-container">
           <div className="col-lg-3 imagenModal">
             <img className=" card-img-start-modal img-fluid p-0" src={imgpath} alt="wine cap" />  
           </div>
           <div className="col col-lg-9 card-body">
             <h1 className="card-title">{name}</h1>
             <p className="card-text">{winery}</p>
-            <Rating name="half-rating" defaultValue={avgratings} precision={0.5} 
+            <Rating name="half-rating" 
+              defaultValue={avgratings} 
+              precision={0.5} 
               onChange={(event, newValue) => {
                 setNewReview(newValue);
-            }}/>
+              }}
+            />
             <p>Rating: <b>{rating}</b> ({totalReviews})</p>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">Year: {year}</li>

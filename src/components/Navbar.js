@@ -1,5 +1,4 @@
 
-import Link from "react-router-dom";
 import React from "react";
 // import { useState } from "react";
 // import Malbec from "./Malbec";
@@ -10,10 +9,10 @@ import '../stylesheets/Navbar.css'
 function NavigationBar () {
   // const [showVariety, setshowVariety] = useState(true)
 
-  const ShowVarietyGrapes = (variety) => {
+  // const ShowVarietyGrapes = (variety) => {
 
-    console.log(variety);
-  }
+  //   console.log(variety);
+  // }
 
 
   return (

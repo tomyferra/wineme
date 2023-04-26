@@ -4,7 +4,7 @@ import Links from './components/Links';
 import Hero from './components/Hero';
 import './App.css';
 
-import Varietals from './components/Varietals';
+//import Varietals from './components/Varietals';
 
 
 function App() {

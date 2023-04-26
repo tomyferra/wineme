@@ -42,9 +42,9 @@ function WineList() {
     <div id="wineList" className="winelist container-fluid">
       <div className="row">
         <div className="container">
-          <form class="search-form">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={handleChange}/>
-            <button class="btn-primary btn my-sm-0" type="submit">Search</button>
+          <form className="search-form">
+            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={handleChange}/>
+            <button className="btn-primary btn my-sm-0" type="submit">Search</button>
           </form>
           <div className="row justify-content-center wines-value">
             {IsLoading? 
