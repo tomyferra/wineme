@@ -32,7 +32,7 @@ function Hero () {
   return(
     <div className="hero-container container-fluid">
       <img src={WineMeLogo} alt="Wine Me Logo" className="WineMeLogo"/>
-      <h3>Drink Wine, Learn Wine</h3>
+      <h3>Drink Wine, Rate Wine</h3>
       <div className="container row countUp-container">
         <div className="col col-sm-4 countUp-item">
           <i className="d-flex align-items-center fa-solid fa-wine-glass fa-2xl"></i>
