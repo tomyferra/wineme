@@ -10,7 +10,7 @@ class WineDataService {
   }
 
   create(data) {
-    return http.post("/create", data);
+    return http.post("/", data);
   }
 
   update(id, data) {

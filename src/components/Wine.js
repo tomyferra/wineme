@@ -13,7 +13,7 @@ function Wine ({ name, winery, description, year, variety, totalratings, totalsc
 
 
   return(
-    <div className="container my-5">
+    <div className="winecontainer container my-5" onClick={() => setIsOpen(!isOpen)}>
       <div className="card row flex-row">
           <div className="imagen">
             <img className=" col-lg-4 card-img-start img-fluid p-0" src={window.location.origin + imgpath} alt={imgpath} />  

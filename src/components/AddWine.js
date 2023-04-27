@@ -69,7 +69,7 @@ function AddWine () {
         <div className="row d-flex justify-content-around">
           <div className="col-md-4 mb-3">
             <label for="validationCustom03">Year</label>
-            <input type="text" className="form-control" ref={yearref} id="validationCustom03" placeholder="Year" />
+            <input type="number" className="form-control" ref={yearref} id="validationCustom03" placeholder="Year" />
           </div>
           <div className="col-md-4 mb-3">
             <label for="validationCustom04">Variety</label>
@@ -91,7 +91,6 @@ function AddWine () {
           </div>
           <div className="col-md-4 mb-3 custom-file">
             <input type="file" className="custom-file-input" id="customFile"/>
-            <label className="custom-file-label" for="customFile">Choose file</label>
           </div>
         </div>
         <button className="btn btn-primary" type="submit" onClick={handleSubmit}>Submit form</button>
