@@ -15,7 +15,7 @@ function App() {
       <Navbar />
       <Hero />
       <WineList />
-      <AddWine />
+      {/* <AddWine /> */}
       {/* <Varietals /> */}
       <Links />
     </div>
