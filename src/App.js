@@ -2,6 +2,7 @@ import WineList from './components/WineList';
 import Navbar from './components/Navbar';
 import Links from './components/Links';
 import Hero from './components/Hero';
+import AddWine from './components/AddWine';
 import './App.css';
 
 //import Varietals from './components/Varietals';
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <Hero />
       <WineList />
+      <AddWine />
       {/* <Varietals /> */}
       <Links />
     </div>
