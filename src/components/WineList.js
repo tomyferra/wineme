@@ -15,6 +15,7 @@ function WineList() {
       setIsLoading(true);
       WineDataService.getAll()
         .then(response => {
+          console.log(response.data)
           setWines(response.data);
           setallWines(response.data);
           
@@ -64,7 +65,7 @@ function WineList() {
                   visible={true}
                 />
               </div> : 
-              wines.map( (wine) => (
+              wines.sort((a, b)=>{return a.Name > b.Name ? 1 : -1}).map( (wine) => (
                 <div className="col col-sm-4 wines-style">
                   <Wine 
                     name={wine.Name} 
