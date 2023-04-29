@@ -66,7 +66,7 @@ function WineList() {
                 />
               </div> : 
               wines.sort((a, b)=>{return a.Name > b.Name ? 1 : -1}).map( (wine) => (
-                <div className="col col-sm-4 wines-style">
+                <div className="col col-sm-4 wines-style h-100">
                   <Wine 
                     name={wine.Name} 
                     winery={wine.Winery} 

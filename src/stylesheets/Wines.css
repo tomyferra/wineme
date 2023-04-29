@@ -19,3 +19,9 @@
 .search-form{
   display: flex;
 }
+
+@media screen and (max-width: 767px) {
+  .winelist{
+    padding: 20px 5% 0 5%;
+  }
+} 

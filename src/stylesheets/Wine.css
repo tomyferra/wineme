@@ -3,6 +3,8 @@
 }
 .card-title{
   word-wrap: normal;
+  font-size: 22px;
+  min-height: 100px;
 }
 
 .imagenModal{
@@ -13,6 +15,7 @@
 }
 .imagen{
   display: flex;
+  height: 275px;
   justify-content: center;
 }
 
@@ -27,6 +30,9 @@
 .modal-container{
   justify-content: center;
 }
+.winecontainer{
+  max-height: 80vh;
+}
 
 @media screen and (max-width: 767px) {
   .card-img-start{
@@ -35,21 +41,28 @@
   }
 }
 
-@media screen and (min-width: 767px) and (max-width: 991px) {
+@media screen and (min-width: 768px) and (max-width: 991px) {
   .card-img-start{
     max-height: 300px;
     width: auto;
   }
+  .imagen{
+    height: 250px;
+  }
 }
-/* 
 
 @media screen and (max-width: 767px) {
-  .card-img-start-modal{
-
-    max-height: 300px;
+  .imagen{
     display: flex;
-    align-items: center;
+    max-height: 300px;
     justify-content: center;
   }
-} */
+} 
+@media screen and (min-width: 991px) {
+  .imagen{
+    height: 275px;
+  }
+} 
+
+
 
