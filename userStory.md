@@ -3,3 +3,6 @@
 - [x] Add wine
   - [ ] Works fine. Need to integrate the picture pickup and done.
 - [ ] Make all div's same height for wineList.
+- [ ] Create username and password.
+- [ ] Allow users to fav the wines.
+- [ ] Restrict endpoint consumption from everywhere.
