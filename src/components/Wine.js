@@ -10,13 +10,21 @@ function Wine ({ name, winery, description, year, variety, totalratings, totalsc
 
 
   const [isOpen, setIsOpen] = useState(false);
+  let imagepath = imgpath;
+  if (imagepath.includes("/img/")){
+    imagepath = window.location.origin + imgpath
+  }
+  else {
+    imagepath=imgpath
+    console.log("No es local, el path es", imagepath);
+  }
 
 
   return(
     <div className="winecontainer container my-5">
-      <div className="card row flex-row h-100 p-1">
+      <div className="card row flex-row h-100">
           <div className="imagen">
-            <img className=" col-lg-4 card-img-start img-fluid p-0" src={window.location.origin + imgpath} alt={imgpath} />  
+            <img className=" col-lg-4 card-img-start img-fluid p-0" src={imagepath} alt={imagepath} />  
           </div>
           <div className="col-lg-8 h-100 card-body text-center">
             <h1 className="card-title">{name}</h1>

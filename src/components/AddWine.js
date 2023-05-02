@@ -11,6 +11,19 @@ function AddWine () {
   const regionref = React.useRef();
   const varietyref = React.useRef();
 
+  const handleFileChange = async e =>{
+    console.log("Uploading...");
+    const files = e.target.files;
+    const data = new FormData();
+    data.append('file', files[0]);
+    const res = await fetch('https://api.cloudinary.com/v1_1/da9vgpnld',{
+      method: 'POST',
+      body: data
+    });
+    const file = await res.json();
+    console.log("File: ",file);
+  }
+
   const handleSubmit = (event) => {
 
     event.preventDefault();
@@ -20,6 +33,17 @@ function AddWine () {
     const variety = varietyref.current.value;
     const region = regionref.current.value;
     const desc = descref.current.value;
+
+    let body = new FormData()
+    console.log("evento:",event)
+    body.set('key', 'an_api_key')
+    // body.append('image', img)
+
+    // return axios({
+    //   method: 'post',
+    //   url: 'https://api.imgbb.com/1/upload',
+    //   data: body
+    // })
 
     const input = {
       "Name": name,
@@ -37,8 +61,10 @@ function AddWine () {
     WineDataService.create(input)
       .then(response => {
         console.log(response.data)
+        
       })
       .catch(error => {
+        console.log("public folder: ", process.env.PUBLIC_URL)
         console.log(error);
         alert(error);
       });
@@ -90,7 +116,7 @@ function AddWine () {
             </div>
           </div>
           <div className="col-md-4 mb-3 custom-file">
-            <input type="file" className="custom-file-input" id="customFile"/>
+            <input type="file" className="custom-file-input" id="file" name="file" placeholder="Upload Image" required onChange={handleFileChange}/>
           </div>
         </div>
         <button className="btn btn-primary" type="submit" onClick={handleSubmit}>Submit form</button>
@@ -100,28 +126,3 @@ function AddWine () {
 }
 
 export default AddWine;
-
-
-
-
-
-// <script>
-// // Example starter JavaScript for disabling form submissions if there are invalid fields
-// (function() {
-//   'use strict';
-//   window.addEventListener('load', function() {
-//     // Fetch all the forms we want to apply custom Bootstrap validation styles to
-//     var forms = document.getElementsByClassName('needs-validation');
-//     // Loop over them and prevent submission
-//     var validation = Array.prototype.filter.call(forms, function(form) {
-//       form.addEventListener('submit', function(event) {
-//         if (form.checkValidity() === false) {
-//           event.preventDefault();
-//           event.stopPropagation();
-//         }
-//         form.classList.add('was-validated');
-//       }, false);
-//     });
-//   }, false);
-// })();
-// </script>
