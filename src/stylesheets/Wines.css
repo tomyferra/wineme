@@ -15,6 +15,15 @@
   justify-content: center;
   padding: 20px;
 }
+.wineMeGif{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
 
 .search-form{
   display: flex;
