@@ -2,8 +2,7 @@ import Wine from './Wine';
 import '../stylesheets/Wines.css';
 import WineDataService from '../services/wine-services';
 import { useEffect, useState } from 'react';
-import WineMeGif from '../images/WineMeGif.webp';
-// import WineMeGif from '../images/WineMe4.mp4';
+import { TailSpin } from  'react-loader-spinner'
 
 function WineList() {
 
@@ -53,9 +52,19 @@ function WineList() {
           </form>
           <div className="row justify-content-center wines-value">
             {IsLoading? 
-              <div className="spinner2">
-                <img src={WineMeGif} alt="WineMe spinner" className='wineMeGif'/>
-              </div> : 
+              <div className="spinner">
+              <TailSpin
+                className='spinner'
+                height="80"
+                width="80"
+                color="#4fa94d"
+                ariaLabel="tail-spin-loading"
+                radius="1"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+              />
+            </div> : 
               wines.sort((a, b)=>{return a.Name > b.Name ? 1 : -1}).map( (wine) => (
                 <div className="col col-sm-4 wines-style h-100">
                   <Wine 

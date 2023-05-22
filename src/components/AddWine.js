@@ -65,7 +65,6 @@ function AddWine () {
       })
       .catch(error => {
         console.log("public folder: ", process.env.PUBLIC_URL)
-        console.log(error);
         alert(error);
       });
     
