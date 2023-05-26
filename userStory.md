@@ -6,3 +6,5 @@
 - [ ] Create username and password.
 - [ ] Allow users to fav the wines.
 - [ ] Restrict endpoint consumption from everywhere.
+- [ ] Remove MongoDb and use json-server instead.
+- [ ] Parent-child prop handler. Context ?

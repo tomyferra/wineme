@@ -16,8 +16,11 @@ function AddWine () {
     const files = e.target.files;
     const data = new FormData();
     data.append('file', files[0]);
-    const res = await fetch('https://api.cloudinary.com/v1_1/da9vgpnld',{
+    const res = await fetch('https://api.imgur.com/3/image/',{
       method: 'POST',
+      headers: {
+        Authorization: "Client-ID 91b89306c400378"
+      },
       body: data
     });
     const file = await res.json();
@@ -27,6 +30,8 @@ function AddWine () {
   const handleSubmit = (event) => {
 
     event.preventDefault();
+    //https://linguinecode.com/post/how-to-get-form-data-on-submit-in-reactjs
+    //READ THIS TO LEARN HOW TO HANDLE STATES...
     const name = nameref.current.value;
     const winery = wineryref.current.value;
     const year = yearref.current.value;
@@ -34,16 +39,7 @@ function AddWine () {
     const region = regionref.current.value;
     const desc = descref.current.value;
 
-    let body = new FormData()
-    console.log("evento:",event)
-    body.set('key', 'an_api_key')
-    // body.append('image', img)
 
-    // return axios({
-    //   method: 'post',
-    //   url: 'https://api.imgbb.com/1/upload',
-    //   data: body
-    // })
 
     const input = {
       "Name": name,

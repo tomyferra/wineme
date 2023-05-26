@@ -1,39 +1,37 @@
 import Wine from './Wine';
 import '../stylesheets/Wines.css';
-import WineDataService from '../services/wine-services';
-import { useEffect, useState } from 'react';
-import { TailSpin } from  'react-loader-spinner'
+import { useState } from 'react';
 
-function WineList() {
+function WineList({ Wines, Allwines }) {
 
-  const [wines,setWines] = useState([]);
-  const [allwines,setallWines] = useState([]);
-  const [IsLoading,setIsLoading] = useState(true);
+  const [wines,setWines] = useState(Wines);
+  const [allwines,setallWines] = useState(Allwines);
+  //const [IsLoading,setIsLoading] = useState(true);
 
-  useEffect(() => {
-    async function loadWines(){
-      setIsLoading(true);
-      WineDataService.getAll()
-        .then(response => {
-          console.log(response.data)
-          setWines(response.data);
-          setallWines(response.data);
+  // useEffect(() => {
+  //   async function loadWines(){
+  //     setIsLoading(true);
+  //     WineDataService.getAll()
+  //       .then(response => {
+  //         console.log(response.data)
+  //         setWines(response.data);
+  //         setallWines(response.data);
           
-          setIsLoading(false);
-        })
-        .catch(error => {
-          console.log(error);
-          alert(error);
-        });
-    }
-    setIsLoading(false);
-    loadWines();
-  }, []);
+  //         setIsLoading(false);
+  //       })
+  //       .catch(error => {
+  //         console.log(error);
+  //         alert(error);
+  //       });
+  //   }
+  //   setIsLoading(false);
+  //   loadWines();
+  // }, []);
 
 
   const handleChange = (e) =>{
     const results = allwines.filter(wine => {
-      if (e.target.value === "" || e.target.value.length<3) {return wines}
+      if (e.target.value === "" || e.target.value.length<3) {return Wines}
       if (wine.Name.toLowerCase().includes(e.target.value.toLowerCase())) {
         return wine.Name.toLowerCase().includes(e.target.value.toLowerCase())
       }
@@ -51,21 +49,7 @@ function WineList() {
             <button className="btn-primary btn my-sm-0" type="submit">Search</button>
           </form>
           <div className="row justify-content-center wines-value">
-            {IsLoading? 
-              <div className="spinner">
-              <TailSpin
-                className='spinner'
-                height="80"
-                width="80"
-                color="#4fa94d"
-                ariaLabel="tail-spin-loading"
-                radius="1"
-                wrapperStyle={{}}
-                wrapperClass=""
-                visible={true}
-              />
-            </div> : 
-              wines.sort((a, b)=>{return a.Name > b.Name ? 1 : -1}).map( (wine) => (
+            {Wines.sort((a, b)=>{return a.Name > b.Name ? 1 : -1}).map( (wine) => (
                 <div className="col col-sm-4 wines-style h-100">
                   <Wine 
                     name={wine.Name} 
