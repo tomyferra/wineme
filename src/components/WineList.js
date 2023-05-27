@@ -43,7 +43,7 @@ function WineList({ isLoading }) {
       <div className="row">
         <div className="container">
           <form className="search-form">
-            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" onChange={handleChange}/>
+            <input className="form-control mr-sm-2" type="search" placeholder="Search by name, winery or variety" aria-label="Search" onChange={handleChange}/>
             <button className="btn-primary btn my-sm-0" type="submit">Search</button>
           </form>
           <div className="row justify-content-center wines-value">
