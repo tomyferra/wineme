@@ -65,11 +65,12 @@ function WineModal ({ setIsOpen, name, winery, description, year, variety, total
                 className="btn btn-primary "
                 onClick={() => {
                   setIsOpen(false);
+                  window.location.reload();
                 }}
               >
                 Close
               </button>
-              <button
+              {/* <button
                 className="btn btn-success "
                 onClick={() => {
                   setIsOpen(false);
@@ -77,7 +78,7 @@ function WineModal ({ setIsOpen, name, winery, description, year, variety, total
                 }}
               >
                 Save
-              </button>
+              </button> */}
 
             </div>
           </div>
