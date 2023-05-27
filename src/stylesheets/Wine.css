@@ -14,6 +14,7 @@
   justify-content: center;
 }
 .imagen{
+  margin-top: 10px;
   display: flex;
   height: 275px;
   justify-content: center;

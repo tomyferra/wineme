@@ -23,10 +23,18 @@
   transform: translate(-50%, -50%);
   width: 100%;
 }
+.btn{
+  background-color: #776343;
+  color: white;
+  border: none;
+}
 
 
 .search-form{
   display: flex;
+}
+.inputbar{
+  margin-right: 10px;
 }
 
 @media screen and (max-width: 767px) {
