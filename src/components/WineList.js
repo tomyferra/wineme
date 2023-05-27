@@ -1,39 +1,37 @@
 import Wine from './Wine';
 import '../stylesheets/Wines.css';
-import { useState } from 'react';
+import WineDataService from '../services/wine-services';
+import { useEffect, useState } from 'react';
 
-function WineList({ Wines, Allwines }) {
+function WineList({ isLoading }) {
 
-  const [wines,setWines] = useState(Wines);
-  const [allwines,setallWines] = useState(Allwines);
-  //const [IsLoading,setIsLoading] = useState(true);
+  const [wines,setWines] = useState([]);
+  const [allwines,setallWines] = useState([]);
 
-  // useEffect(() => {
-  //   async function loadWines(){
-  //     setIsLoading(true);
-  //     WineDataService.getAll()
-  //       .then(response => {
-  //         console.log(response.data)
-  //         setWines(response.data);
-  //         setallWines(response.data);
-          
-  //         setIsLoading(false);
-  //       })
-  //       .catch(error => {
-  //         console.log(error);
-  //         alert(error);
-  //       });
-  //   }
-  //   setIsLoading(false);
-  //   loadWines();
-  // }, []);
-
+  useEffect(() => {
+    async function loadWines(){
+      WineDataService.getAll()
+        .then(response => {
+          console.log(response.data)
+          setWines(response.data);
+          setallWines(response.data);
+          })
+        .catch(error => {
+          console.log(error);
+          alert(error);
+        });
+    }
+    loadWines();
+  }, []);
 
   const handleChange = (e) =>{
     const results = allwines.filter(wine => {
-      if (e.target.value === "" || e.target.value.length<3) {return Wines}
+      if (e.target.value === "" || e.target.value.length<3) {return wines}
       if (wine.Name.toLowerCase().includes(e.target.value.toLowerCase())) {
         return wine.Name.toLowerCase().includes(e.target.value.toLowerCase())
+      }
+      else if (wine.Variety.toLowerCase().includes(e.target.value.toLowerCase())) {
+        return wine.Variety.toLowerCase().includes(e.target.value.toLowerCase())
       }
       return wine.Winery.toLowerCase().includes(e.target.value.toLowerCase());
     })
@@ -49,23 +47,24 @@ function WineList({ Wines, Allwines }) {
             <button className="btn-primary btn my-sm-0" type="submit">Search</button>
           </form>
           <div className="row justify-content-center wines-value">
-            {Wines.sort((a, b)=>{return a.Name > b.Name ? 1 : -1}).map( (wine) => (
-                <div className="col col-sm-4 wines-style h-100">
-                  <Wine 
-                    name={wine.Name} 
-                    winery={wine.Winery} 
-                    description={wine.Description} 
-                    year={wine.Year} 
-                    variety={wine.Variety} 
-                    totalratings={wine.Totalqualifications} 
-                    avgratings={wine.Avgqualifications} 
-                    region={wine.Region} 
-                    imgpath={wine.Image} 
-                    totalscore={wine.Score} 
-                    identifier={wine._id}
-                  />
-                </div>
-              ))}
+            { isLoading ? null :  
+            wines.sort((a, b)=>{return a.Name > b.Name ? 1 : -1}).map( (wine) => (
+              <div className="col col-sm-4 wines-style h-100">
+                <Wine 
+                  name={wine.Name} 
+                  winery={wine.Winery} 
+                  description={wine.Description} 
+                  year={wine.Year} 
+                  variety={wine.Variety} 
+                  totalratings={wine.Totalqualifications} 
+                  avgratings={wine.Avgqualifications} 
+                  region={wine.Region} 
+                  imgpath={wine.Image} 
+                  totalscore={wine.Score} 
+                  identifier={wine._id}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -70,16 +70,6 @@ function WineModal ({ setIsOpen, name, winery, description, year, variety, total
               >
                 Close
               </button>
-              {/* <button
-                className="btn btn-success "
-                onClick={() => {
-                  setIsOpen(false);
-                  window.location.reload();
-                }}
-              >
-                Save
-              </button> */}
-
             </div>
           </div>
       </div>
