@@ -4,10 +4,15 @@
 .card-title{
   word-wrap: normal;
   font-size: 22px;
-  min-height: 100px;
+  min-height: 70px;
+}
+.card-title-modal{
+  word-wrap: normal;
+  font-size: 22px;
 }
 
 .imagenModal{
+  margin-top: 20px;
   height: 250px;
   width: auto;
   display: flex;

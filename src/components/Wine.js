@@ -30,7 +30,7 @@ function Wine ({ name, winery, description, year, variety, totalratings, totalsc
           <div className="col-lg-8 h-100 card-body text-center">
             <h1 className="card-title">{name}</h1>
             <p className="card-text">{winery}</p>
-            <Tags tags={variety}/>
+            {/* <Tags tags={variety}/> */}
             <Rating name="read-only" readOnly defaultValue={avgratings} precision={0.1} />
             <p>Rating: <b>{avgratings}</b> ({totalratings})</p>
             <button onClick={() => setIsOpen(!isOpen)} type="button" className="btn btn-primary">Show Details</button>

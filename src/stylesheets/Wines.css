@@ -29,7 +29,6 @@
   border: none;
 }
 
-
 .search-form{
   display: flex;
 }
@@ -37,8 +36,29 @@
   margin-right: 10px;
 }
 
-@media screen and (max-width: 767px) {
+.noResultsText{
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  color: #776343;
+}
+.noResultsImg{
+  width: 35%;
+}
+
+@media (width < 767px){
   .winelist{
-    padding: 20px 5% 0 5%;
+    padding: 20px 5% 20px 5%;
   }
 } 
+@media (767px <= width < 991px) {
+  .noResultsImg{
+    width: 40%;
+  }
+}
+
+@media (width < 767px) {
+  .noResultsImg{
+    width: 55%;
+  }
+}

@@ -45,7 +45,7 @@ function App() {
     <div className="App mt-auto d-flex flex-column min-vh-100">
       <Navbar />
       <Hero IsLoading={IsLoading} wineCount={allwines.length} totalQualifications={totalQualifications} />
-      <WineList IsLoading={IsLoading}/>
+      <WineList IsLoadingWines={IsLoading}/>
       {/* <AddWine /> */}
       {/* <Varietals /> */}
       <Links />
