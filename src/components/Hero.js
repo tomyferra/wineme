@@ -60,7 +60,7 @@ function Hero ({ IsLoading, wineCount, totalQualifications }) {
                 </span>
               </span>
             </a>
-            <p className="scroll-text">scroll me</p>
+            <p className="scroll-text">Explore...</p>
           </div>
         </div>
       }

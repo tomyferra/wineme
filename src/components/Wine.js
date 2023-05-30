@@ -1,7 +1,6 @@
 import React from "react";
 import '../stylesheets/Wine.css';
 import WineModal from './WineModal';
-import Tags from './Tags';
 import { useState } from "react";
 import { Modal } from "react-bootstrap";
 import { Rating } from '@mui/material';

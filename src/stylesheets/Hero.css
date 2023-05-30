@@ -42,9 +42,6 @@
 
 /* Scroll Mouse effect */
 
-.scroll-text{
-  color: #a88f69;
-}
 @-webkit-keyframes ani-mouse {
 	0% {
 	opacity: 1;
@@ -101,7 +98,7 @@
 }
 .scroll-btn > * {
 	line-height: 18px;
-	font-size: 13px;
+	font-size: 20px;
 	font-weight: normal;
 	color: #7f8c8d;
 	font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
