@@ -1,4 +1,6 @@
 .hero-container{
+	padding-left: 10%;
+  padding-right: 10%;
   min-height: 100%;
   background-color: #ededed;
   color: #a88f69;
@@ -26,7 +28,7 @@
 	padding-top: 20px;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-between;
 }
 .countUp-item{
 	margin: 15px;

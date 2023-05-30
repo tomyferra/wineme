@@ -25,7 +25,7 @@ function Hero ({ IsLoading, wineCount, totalQualifications }) {
             visible={true}
           />
         </div> :
-        <div className="container">
+        <div className="container-fluid p-0">
           <div className="row countUp-container">
             <div className="col col-sm-4 countUp-item">
               <i className="d-flex align-items-center fa-solid fa-wine-glass fa-2xl"></i>
