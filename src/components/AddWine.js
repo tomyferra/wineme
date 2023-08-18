@@ -4,12 +4,6 @@ import '../stylesheets/AddWine.css';
 import WineDataService from '../services/wine-services';
 
 function AddWine () {
-  const nameref = React.useRef();
-  const wineryref = React.useRef();
-  const descref = React.useRef();
-  const yearref = React.useRef();
-  const regionref = React.useRef();
-  const varietyref = React.useRef();
 
   const handleFileChange = async e =>{
     console.log("Uploading...");
@@ -30,28 +24,19 @@ function AddWine () {
   const handleSubmit = (event) => {
 
     event.preventDefault();
-    //https://linguinecode.com/post/how-to-get-form-data-on-submit-in-reactjs
-    //READ THIS TO LEARN HOW TO HANDLE STATES...
-    const name = nameref.current.value;
-    const winery = wineryref.current.value;
-    const year = yearref.current.value;
-    const variety = varietyref.current.value;
-    const region = regionref.current.value;
-    const desc = descref.current.value;
-
-
+    const fields=Object.fromEntries(new window.FormData(event.target))
 
     const input = {
-      "Name": name,
-      "Winery":winery,
-      "Variety":variety,
-      "Description":desc,
-      "Year":year,
+      "Name": fields.name,
+      "Winery":fields.winery,
+      "Variety":fields.variety,
+      "Description":fields.desc,
+      "Year":fields.year,
       "Totalqualifications":0,
       "Avgqualifications":0,
       "Score":0,
       "Image":"/img/Martir.webp",
-      "Region":region
+      "Region":fields.region
     };
     console.log(input)
     WineDataService.create(input)
@@ -74,14 +59,14 @@ function AddWine () {
         <div className="row d-flex justify-content-around">
           <div className="col-md-4 mb-3">
             <label forhtml="validationCustom01">Name</label>
-            <input type="text" className="form-control" ref={nameref} id="validationCustom01" placeholder="Name" required />
+            <input type="text" className="form-control" name="name" id="validationCustom01" placeholder="Name" required />
             <div className="valid-feedback">
               Looks good!
             </div>
           </div>
           <div className="col-md-4 mb-3">
             <label for="validationCustom02">Winery</label>
-            <input type="text" className="form-control" ref={wineryref} d="validationCustom02" placeholder="Winery" required />
+            <input type="text" className="form-control" name="winery" d="validationCustom02" placeholder="Winery" required />
             <div className="valid-feedback">
               Looks good!
             </div>
@@ -90,31 +75,31 @@ function AddWine () {
         <div className="row d-flex justify-content-around">
           <div className="col-md-4 mb-3">
             <label for="validationCustom03">Year</label>
-            <input type="number" className="form-control" ref={yearref} id="validationCustom03" placeholder="Year" />
+            <input type="number" className="form-control" name="year" id="validationCustom03" placeholder="Year" />
           </div>
           <div className="col-md-4 mb-3">
             <label for="validationCustom04">Variety</label>
-            <input type="text" className="form-control" ref={varietyref} id="validationCustom04" placeholder="Variety" />
+            <input type="text" className="form-control" name="variety" id="validationCustom04" placeholder="Variety" />
           </div>
           <div className="col-md-4 mb-3">
             <label for="validationCustom04">Region</label>
-            <input type="text" className="form-control" ref={regionref} id="validationCustom04" placeholder="Region" />
+            <input type="text" className="form-control" name="region" id="validationCustom04" placeholder="Region" />
           </div>
 
         </div>
         <div className="row">
           <div className="col-md-8 mb-3">
             <label for="validationCustom02">Description</label>
-            <input type="text" className="form-control" id="validationCustom02" ref={descref} placeholder="Description" />
+            <input type="text" className="form-control" id="validationCustom02" name="description" placeholder="Description" />
             <div className="valid-feedback">
               Looks good!
             </div>
           </div>
           <div className="col-md-4 mb-3 custom-file">
-            <input type="file" className="custom-file-input" id="file" name="file" placeholder="Upload Image" required onChange={handleFileChange}/>
+            <input type="file" className="custom-file-input" id="file" name="file" placeholder="Upload Image" onChange={handleFileChange}/>
           </div>
         </div>
-        <button className="btn btn-primary" type="submit" onClick={handleSubmit}>Submit form</button>
+        <button className="btn btn-primary" type="submit" >Submit form</button>
       </form>
     </div>
   );
