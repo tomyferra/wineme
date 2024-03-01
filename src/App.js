@@ -15,15 +15,6 @@ function App() {
   const [IsLoading,setIsLoading] = useState(true);
   let qualifications = 0;
 
-  //json-server call
-  useEffect( () => {
-    async function getEvents() {
-      fetch('http://localhost:3000/wines')
-        .then((res) =>  res.json())
-    }
-    getEvents()
-  },[])
-
   //mongodb call
   useEffect(() => {
     async function loadWines(){
