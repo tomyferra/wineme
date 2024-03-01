@@ -3,15 +3,16 @@ import WineMeLogo from '../images/WineMeLogo.webp';
 import '../stylesheets/Hero.css';
 import CountUp from 'react-countup';
 import { TailSpin } from  'react-loader-spinner'
+//import PullData from "./PullData";
 
 function Hero ({ IsLoading, wineCount, totalQualifications }) {
-  
+
 
   return(
     <div className="hero-container container-fluid">
       <img src={WineMeLogo} alt="Wine Me Logo" className="WineMeLogo"/>
       <h3>Drink Wine, Rate Wine</h3>
-      {IsLoading? 
+      {IsLoading?
         <div className="spinner">
           <TailSpin
             className='spinner'
@@ -30,7 +31,7 @@ function Hero ({ IsLoading, wineCount, totalQualifications }) {
             <div className="col col-sm-4 countUp-item">
               <i className="d-flex align-items-center fa-solid fa-wine-glass fa-2xl"></i>
               <div className="px-3 ">
-                <CountUp 
+                <CountUp
                   className="counter d-flex align-items-center justify-content-center"
                   end={wineCount}
                   delay={1}
@@ -42,7 +43,7 @@ function Hero ({ IsLoading, wineCount, totalQualifications }) {
             <div className="col col-sm-4 countUp-item">
               <i className="d-flex align-items-center fa-solid fa-star-half-stroke fa-2xl"></i>
               <div className="px-3 ">
-                <CountUp 
+                <CountUp
                   className="counter d-flex align-items-center justify-content-center"
                   end={totalQualifications}
                   delay={1}
@@ -51,7 +52,7 @@ function Hero ({ IsLoading, wineCount, totalQualifications }) {
                 <p className="d-flex align-items-center">Ratings</p>
               </div>
             </div>
-            
+
           </div>
           <div className="scroll-btn">
             <a href="#wineList">

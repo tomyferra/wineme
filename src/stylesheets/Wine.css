@@ -40,6 +40,11 @@
   max-height: 80vh;
 }
 
+.heart{
+  max-width: 20%;
+}
+
+
 @media screen and (max-width: 767px) {
   .card-img-start{
     max-width: 50%;
@@ -63,12 +68,12 @@
     max-height: 300px;
     justify-content: center;
   }
-} 
+}
 @media screen and (min-width: 991px) {
   .imagen{
     height: 275px;
   }
-} 
+}
 
 
 

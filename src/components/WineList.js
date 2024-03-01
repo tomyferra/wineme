@@ -13,7 +13,7 @@ function WineList({ IsLoadingWines }) {
     async function loadWines(){
       WineDataService.getAll()
         .then(response => {
-          console.log(response.data)
+          //console.log(response.data)
           setWines(response.data);
           setallWines(response.data);
           })
@@ -50,7 +50,7 @@ function WineList({ IsLoadingWines }) {
             <input className="form-control inputbar mr-sm-2" type="search" placeholder="Search by name, winery or variety" aria-label="Search" onChange={handleChange}/>
             <button className="btn my-sm-0" type="submit">Search</button>
           </form>
-          {console.log(IsLoadingWines)}
+          {/* {console.log(IsLoadingWines)} */}
           <div className="row justify-content-center wines-value">
             { IsLoadingWines ? 
               null : 

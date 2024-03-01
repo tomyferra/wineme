@@ -3,7 +3,6 @@ import WineList from './components/WineList';
 import Navbar from './components/Navbar';
 import Links from './components/Links';
 import Hero from './components/Hero';
-import AddWine from './components/AddWine';
 import './App.css';
 import WineDataService from './services/wine-services';
 
@@ -16,6 +15,16 @@ function App() {
   const [IsLoading,setIsLoading] = useState(true);
   let qualifications = 0;
 
+  //json-server call
+  useEffect( () => {
+    async function getEvents() {
+      fetch('http://localhost:3000/wines')
+        .then((res) =>  res.json())
+    }
+    getEvents()
+  },[])
+
+  //mongodb call
   useEffect(() => {
     async function loadWines(){
       setIsLoading(true);
@@ -46,8 +55,6 @@ function App() {
       <Navbar />
       <Hero IsLoading={IsLoading} wineCount={allwines.length} totalQualifications={totalQualifications} />
       <WineList IsLoadingWines={IsLoading}/>
-      {/* <AddWine /> */}
-      {/* <Varietals /> */}
       <Links />
     </div>
   );
