@@ -13,12 +13,10 @@ function WineList({ IsLoadingWines }) {
     async function loadWines(){
       WineDataService.getAll()
         .then(response => {
-          //console.log(response.data)
           setWines(response.data);
           setallWines(response.data);
           })
         .catch(error => {
-          console.log(error);
           alert(error);
         });
     }
@@ -50,29 +48,28 @@ function WineList({ IsLoadingWines }) {
             <input className="form-control inputbar mr-sm-2" type="search" placeholder="Search by name, winery or variety" aria-label="Search" onChange={handleChange}/>
             <button className="btn my-sm-0" type="submit">Search</button>
           </form>
-          {/* {console.log(IsLoadingWines)} */}
           <div className="row justify-content-center wines-value">
-            { IsLoadingWines ? 
-              null : 
-              (wines.length>0 ? 
+            { IsLoadingWines ?
+              null :
+              (wines.length>0 ?
                 (wines.sort((a, b)=>{return a.Name > b.Name ? 1 : -1}).map( (wine) => (
-                  <div className="col col-sm-4 wines-style h-100">
-                    <Wine 
-                      name={wine.Name} 
-                      winery={wine.Winery} 
-                      description={wine.Description} 
-                      year={wine.Year} 
-                      variety={wine.Variety} 
-                      totalratings={wine.Totalqualifications} 
-                      avgratings={wine.Avgqualifications} 
-                      region={wine.Region} 
-                      imgpath={wine.Image} 
-                      totalscore={wine.Score} 
+                  <div className="col col-sm-4 wines-style h-100" key={wine._id}>
+                    <Wine
+                      name={wine.Name}
+                      winery={wine.Winery}
+                      description={wine.Description}
+                      year={wine.Year}
+                      variety={wine.Variety}
+                      totalratings={wine.Totalqualifications}
+                      avgratings={wine.Avgqualifications}
+                      region={wine.Region}
+                      imgpath={wine.Image}
+                      totalscore={wine.Score}
                       identifier={wine._id}
                     />
                   </div>
-                ))) 
-                : 
+                )))
+                :
                 <>
                   <h2 className='noResultsText'>Sorry, no results for your search...</h2>
                   <img className='noResultsImg' src={NoResults} alt="NoResults" />
