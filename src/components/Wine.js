@@ -21,7 +21,6 @@ function Wine ({ name, winery, description, year, variety, totalratings, totalsc
   }
   else {
     imagepath=imgpath
-    console.log("No es local, el path es", imagepath);
   }
 
   function setNewReview (newValue) {
@@ -45,11 +44,7 @@ function Wine ({ name, winery, description, year, variety, totalratings, totalsc
       Image: imgpath,
       Region: region
     }
-    console.log("New value: ",newValue)
-    console.log("Old Score: ",score)
-    console.log("New Score: ",score+newValue)
 
-    console.log("New Review",newData);
     WineDataService.update(identifier,newData)
       .then(response => {
         console.log(response.data);

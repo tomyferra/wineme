@@ -18,7 +18,6 @@ function AddWine () {
       body: data
     });
     const file = await res.json();
-    console.log("File: ",file);
   }
 
   const handleSubmit = (event) => {
@@ -40,21 +39,16 @@ function AddWine () {
     };
     console.log(input)
     WineDataService.create(input)
-      .then(response => {
-        console.log(response.data)
-        
-      })
       .catch(error => {
-        console.log("public folder: ", process.env.PUBLIC_URL)
         alert(error);
       });
-    
+
   }
 
   return (
     <div className="addWine">
       <h2>Add more Wine</h2>
-      
+
       <form className="needs-validation " onSubmit={handleSubmit}>
         <div className="row d-flex justify-content-around">
           <div className="col-md-4 mb-3">

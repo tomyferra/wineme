@@ -7,17 +7,11 @@ import '../stylesheets/Navbar.css'
 
 
 function NavigationBar () {
-  // const [showVariety, setshowVariety] = useState(true)
-
-  // const ShowVarietyGrapes = (variety) => {
-
-  //   console.log(variety);
-  // }
 
 
   return (
     <>
-    
+
     <nav className="navbar navbar-expand-md">
       <div className="container-fluid">
         <button className="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
