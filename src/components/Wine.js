@@ -15,8 +15,6 @@ function Wine ({ name, winery, description, year, variety, totalratings, totalsc
   const [score, setScore] = useState(Number(totalscore));
   const [isOpen, setIsOpen] = useState(false);
 
-
-
   function setNewReview (newValue) {
     settotalReviews(totalReviews+1);
     setScore(score+newValue);

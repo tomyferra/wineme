@@ -3,7 +3,6 @@ import WineMeLogo from '../images/WineMeLogo.webp';
 import '../stylesheets/Hero.css';
 import CountUp from 'react-countup';
 import { TailSpin } from  'react-loader-spinner'
-//import PullData from "./PullData";
 
 function Hero ({ IsLoading, wineCount, totalQualifications }) {
 
