@@ -15,20 +15,9 @@ function Wine ({ name, winery, description, year, variety, totalratings, totalsc
   const [score, setScore] = useState(Number(totalscore));
   const [isOpen, setIsOpen] = useState(false);
 
-  let imagepath = imgpath;
-  if (imagepath.includes("/img/")){
-    imagepath = window.location.origin + imgpath
-  }
-  else {
-    imagepath=imgpath
-  }
+
 
   function setNewReview (newValue) {
-
-    // settotalReviews(Number(totalratings)+1);
-    // setScore(Number(totalscore)+ Number(newValue));
-    // setRating((Number((totalscore+newValue)/(totalratings+1))).toFixed(2));
-
     settotalReviews(totalReviews+1);
     setScore(score+newValue);
     setRating(((score+newValue)/(totalReviews+1)).toFixed(2));
@@ -57,7 +46,7 @@ function Wine ({ name, winery, description, year, variety, totalratings, totalsc
     <div className="winecontainer container my-5">
       <div className="card row flex-row h-100">
           <div className="imagen">
-            <img className=" col-lg-4 card-img-start img-fluid p-0" src={imagepath} alt={imagepath} />
+            <img className=" col-lg-4 card-img-start img-fluid p-0" src={imgpath} alt={imgpath} />
           </div>
           <div className="col-lg-8 h-100 card-body text-center">
             <h1 className="card-title">{name}</h1>
