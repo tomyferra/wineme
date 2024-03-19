@@ -22,7 +22,7 @@ function App() {
       WineDataService.getAll()
         .then(response => {
           setWines(response.data);
-          qualifications=0;
+          qualifications = 0;
           setallWines(response.data);
           for (var i = 0; i < response.data.length; i++) {
             qualifications = response.data[i].Totalqualifications + qualifications;
@@ -31,7 +31,6 @@ function App() {
           setIsLoading(false);
         })
         .catch(error => {
-          console.log(error);
           alert(error);
         });
     }
