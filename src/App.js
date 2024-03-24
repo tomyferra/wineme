@@ -13,19 +13,21 @@ function App() {
   const [allwines,setallWines] = useState([]);
   const [totalQualifications,settotalQualifications] = useState(0);
   const [IsLoading,setIsLoading] = useState(true);
-  let qualifications = 0;
+
 
   //mongodb call
   useEffect(() => {
     async function loadWines(){
+      let qualifications = 0;
       setIsLoading(true);
       WineDataService.getAll()
         .then(response => {
           setWines(response.data);
-          qualifications = 0;
           setallWines(response.data);
           for (var i = 0; i < response.data.length; i++) {
-            qualifications = response.data[i].Totalqualifications + qualifications;
+            if (response.data[i].Totalqualifications >= 0){
+              qualifications = response.data[i].Totalqualifications + qualifications;
+            }
           }
           settotalQualifications(qualifications);
           setIsLoading(false);
