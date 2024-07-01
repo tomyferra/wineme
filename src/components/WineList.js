@@ -23,22 +23,23 @@ function WineList({ IsLoadingWines }) {
     loadWines();
   }, []);
 
-  const handleChange = (e) =>{
+
+  const handleChange = (e) => {
+    const searchValue = e.target.value.toLowerCase();
+    if (searchValue === "" || searchValue.length < 3) {
+      setWines(allwines);
+      return;
+    }
+
     const results = allwines.filter(wine => {
-      if (e.target.value === "" || e.target.value.length<3) {return wines}
-      if (wine.Name.toLowerCase().includes(e.target.value.toLowerCase())) {
-        return wine.Name.toLowerCase().includes(e.target.value.toLowerCase())
-      }
-      else if (wine.Variety.toLowerCase().includes(e.target.value.toLowerCase())) {
-        return wine.Variety.toLowerCase().includes(e.target.value.toLowerCase())
-      }
-      else if (wine.Winery.toLowerCase().includes(e.target.value.toLowerCase())){
-        return wine.Winery.toLowerCase().includes(e.target.value.toLowerCase())
-      }
-      else setWines([])
-    })
-    setWines(results)
-  }
+      const nameExists = wine.Name && typeof wine.Name.toLowerCase === 'function';
+      const wineryExists = wine.Winery && typeof wine.Winery.toLowerCase === 'function';
+      return (nameExists && wine.Name.toLowerCase().includes(searchValue)) || (wineryExists && wine.Winery.toLowerCase().includes(searchValue));
+    });
+
+    setWines(results);
+  };
+
 
   return (
     <div id="wineList" className="winelist container-fluid">
