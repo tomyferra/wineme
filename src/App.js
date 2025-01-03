@@ -3,9 +3,11 @@ import WineList from './components/WineList';
 import Navbar from './components/Navbar';
 import Links from './components/Links';
 import Hero from './components/Hero';
+// import ProtectedComponent from './components/useProtectedData';
+// import LoginForm from './components/Login';
 import './App.css';
 import WineDataService from './services/wine-services';
-
+import login from './services/api-login';
 
 function App() {
 
@@ -20,6 +22,7 @@ function App() {
     async function loadWines(){
       let qualifications = 0;
       setIsLoading(true);
+      await login();
       WineDataService.getAll()
         .then(response => {
           setWines(response.data);
@@ -46,6 +49,8 @@ function App() {
     <div className="App mt-auto d-flex flex-column min-vh-100">
       <Navbar />
       <Hero IsLoading={IsLoading} wineCount={allwines.length} totalQualifications={totalQualifications} />
+      {/* <LoginForm /> */}
+      {/* <ProtectedComponent/> */}
       <WineList IsLoadingWines={IsLoading}/>
       <Links />
     </div>
