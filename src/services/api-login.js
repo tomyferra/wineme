@@ -7,8 +7,6 @@ async function login(email, password) {
   try {
     const response = await axios.post(loginUrl, { email, password });
     const token = response.data.token;
-    console.log("token", token);
-    localStorage.setItem("token", token); // Guardar el token en localStorage
     sessionStorage.setItem("token", token); // Guardar el token en sessionStorage
 
     return true; // Login exitoso

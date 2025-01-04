@@ -18,12 +18,8 @@ function App() {
   const [IsLoading,setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log("useEffect ejecutado");
-
     let isMounted = true;
-
     async function loadWines() {
-      console.log("loadWines ejecutado");
       try {
         setIsLoading(true);
 
@@ -75,8 +71,6 @@ function App() {
     <div className="App mt-auto d-flex flex-column min-vh-100">
       <Navbar />
       <Hero IsLoading={IsLoading} wineCount={allwines.length} totalQualifications={totalQualifications} />
-      {/* <LoginForm /> */}
-      {/* <ProtectedComponent/> */}
       <WineList IsLoadingWines={IsLoading}/>
       <Links />
     </div>
