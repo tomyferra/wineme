@@ -1,8 +1,10 @@
 import Wine from './Wine';
 import '../stylesheets/Wines.css';
 import WineDataService from '../services/wine-services';
+import login from '../services/api-login';
 import { useEffect, useState } from 'react';
 import NoResults from '../images/NoResults.webp'
+
 
 function WineList({ IsLoadingWines }) {
 
@@ -11,6 +13,18 @@ function WineList({ IsLoadingWines }) {
 
   useEffect(() => {
     async function loadWines(){
+      let token = sessionStorage.getItem("token");
+
+      if (!token) {
+        const email = process.env.REACT_APP_API_USER_EMAIL;
+        const password = process.env.REACT_APP_API_USER_PASSWORD;
+        const success = await login(email, password);
+        if (!success) {
+          alert("Login fallido. No se pudieron cargar los vinos.");
+          return;
+        }
+        token = sessionStorage.getItem("token"); // Obtener el token después del login
+      }
       WineDataService.getAll()
         .then(response => {
           setWines(response.data);
