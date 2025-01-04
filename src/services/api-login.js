@@ -2,29 +2,20 @@ import axios from "axios";
 
 // Leer variables de entorno
 const loginUrl = process.env.REACT_APP_API_LOGIN_URL;
-const email = process.env.REACT_APP_API_USER_EMAIL;
-const password = process.env.REACT_APP_API_USER_PASSWORD;
 
-const login = async () => {
+async function login(email, password) {
   try {
-    const response = await axios.post(
-      loginUrl,
-      { email: email, password: password },
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await axios.post(loginUrl, { email, password });
     const token = response.data.token;
+    console.log("token", token);
+    localStorage.setItem("token", token); // Guardar el token en localStorage
+    sessionStorage.setItem("token", token); // Guardar el token en sessionStorage
 
-    // Guardar el token en localStorage
-    localStorage.setItem("authToken", token);
-    return token;
+    return true; // Login exitoso
   } catch (error) {
-    console.error("Error al hacer login:", error.message);
-    throw error;
+    console.error("Error en el login:", error);
+    return false; // Login fallido
   }
-};
+}
 
 export default login;

@@ -8,41 +8,67 @@ import Hero from './components/Hero';
 import './App.css';
 import WineDataService from './services/wine-services';
 import login from './services/api-login';
+const email = process.env.REACT_APP_EMAIL;
+const password = process.env.REACT_APP_PASSWORD;
 
 function App() {
-
   const [wines,setWines] = useState([]);
   const [allwines,setallWines] = useState([]);
   const [totalQualifications,settotalQualifications] = useState(0);
   const [IsLoading,setIsLoading] = useState(true);
 
-
-  //mongodb call
   useEffect(() => {
-    async function loadWines(){
-      let qualifications = 0;
-      setIsLoading(true);
-      await login();
-      WineDataService.getAll()
-        .then(response => {
+    console.log("useEffect ejecutado");
+
+    let isMounted = true;
+
+    async function loadWines() {
+      console.log("loadWines ejecutado");
+      try {
+        setIsLoading(true);
+
+        let token = sessionStorage.getItem("token");
+
+        if (!token) {
+          const email = process.env.REACT_APP_API_USER_EMAIL;
+          const password = process.env.REACT_APP_API_USER_PASSWORD;
+          const success = await login(email, password);
+          if (!success) {
+            alert("Login fallido. No se pudieron cargar los vinos.");
+            return;
+          }
+          token = sessionStorage.getItem("token"); // Obtener el token después del login
+        }
+
+        if (isMounted) {
+          const response = await WineDataService.getAll();
+          let qualifications = 0;
           setWines(response.data);
           setallWines(response.data);
-          for (var i = 0; i < response.data.length; i++) {
-            if (response.data[i].Totalqualifications >= 0){
-              qualifications = response.data[i].Totalqualifications + qualifications;
+          for (let i = 0; i < response.data.length; i++) {
+            if (response.data[i].Totalqualifications >= 0) {
+              qualifications += response.data[i].Totalqualifications;
             }
           }
           settotalQualifications(qualifications);
+        }
+      } catch (error) {
+        if (isMounted) {
+          alert("Error al cargar los vinos:", error);
+        }
+      } finally {
+        if (isMounted) {
           setIsLoading(false);
-        })
-        .catch(error => {
-          alert(error);
-        });
+        }
+      }
     }
-    setIsLoading(false);
-    loadWines();
-  }, []);
 
+    loadWines();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
 
   return (
