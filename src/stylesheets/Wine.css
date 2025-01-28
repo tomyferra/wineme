@@ -1,3 +1,8 @@
+.card-recommended{
+  display: flex;
+  justify-content: center;
+}
+
 .card-body{
   color: black;
 }
@@ -74,6 +79,7 @@
     height: 275px;
   }
 }
+
 
 
 

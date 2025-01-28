@@ -32,6 +32,10 @@ class WineDataService {
   updatePart(id, field) {
     return http.patch(`/updatepart/${id}`, field);
   }
+
+  recommend(name) {
+    return http.post(`/recommend/${name}`);
+  }
 }
 
 export default new WineDataService();

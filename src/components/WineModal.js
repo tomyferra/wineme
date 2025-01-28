@@ -35,8 +35,6 @@ function WineModal ({ setNewReview, setIsOpen, name, winery, description, year, 
             <p>Rating: <b>{avgratings}</b> ({totalratings})</p>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">Year: {year}</li>
-
-              {/* <li className="list-group-item">Variety: <Tags tags={variety}/></li> */}
               <li className="list-group-item">Region: {region}</li>
               <li className="list-group-item">{description}</li>
             </ul>
