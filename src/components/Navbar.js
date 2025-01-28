@@ -32,11 +32,11 @@ function NavigationBar () {
             <li className="nav-item">
               <a className="nav-link " aria-current="page" href='#SocialMedia'>Social Media</a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link " aria-current="page" href='#wineList'>Login</a>
               <button onClick={handleLoginClick} type="button" className="btn btn-primary">Login</button>
-            </li>
-          {showLogin && <LoginForm />} {/* Renderiza el formulario de login si showLogin es true */}
+            </li> */}
+          {/* {showLogin && <LoginForm />} */}
           </ul>
         </div>
       </div>
