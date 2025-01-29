@@ -68,7 +68,7 @@ function WineList({ IsLoadingWines }) {
               null :
               (wines.length>0 ?
                 (wines.sort((a, b)=>{return a.Name > b.Name ? 1 : -1}).map( (wine) => (
-                  <div className="col col-sm-4 wines-style h-100" key={wine._id}>
+                  <div className="col col-sm-4 wines-style h-100 pb-5" key={wine._id}>
                     <Wine
                       name={wine.Name}
                       winery={wine.Winery}
