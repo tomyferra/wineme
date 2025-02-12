@@ -1,18 +1,11 @@
 
 import React from "react";
-import { useState } from "react";
-// import Malbec from "./Malbec";
 import WineMeLogo from '../images/WineMeLogo.webp';
 import '../stylesheets/Navbar.css'
-import LoginForm from "./Login";
+
 
 
 function NavigationBar () {
-  const [showLogin, setShowLogin] = useState(false);
-
-  const handleLoginClick = () => {
-    setShowLogin(!showLogin); // Cambia el estado al hacer clic en "Login"
-  };
 
   return (
     <>
@@ -28,15 +21,13 @@ function NavigationBar () {
             <li className="nav-item">
               <a className="nav-link " aria-current="page" href='#wineList'>Wines</a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link " aria-current="page" href='#Cepas'>Cepas</a>
+            </li>
 
             <li className="nav-item">
               <a className="nav-link " aria-current="page" href='#SocialMedia'>Social Media</a>
             </li>
-            {/* <li className="nav-item">
-              <a className="nav-link " aria-current="page" href='#wineList'>Login</a>
-              <button onClick={handleLoginClick} type="button" className="btn btn-primary">Login</button>
-            </li> */}
-          {/* {showLogin && <LoginForm />} */}
           </ul>
         </div>
       </div>
